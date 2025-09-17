@@ -21,10 +21,9 @@ $subtitle = get_field('subtitle') ?? '';
                 </div>
             </div>
 
-            <div class="form">
+            <div class="form  anim-card _anim-items">
                 <?php echo do_shortcode('[contact-form-7 id="c4ea21f" title="Contact Form"]') ?>
             </div>
-
 
         </div>
     </div>

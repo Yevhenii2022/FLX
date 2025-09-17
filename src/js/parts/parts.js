@@ -79,4 +79,30 @@ document.addEventListener('DOMContentLoaded', function () {
 			animOnScrollCar();
 		}, 300);
 	}
+
+	// checkboxes
+	const multiselects = document.querySelectorAll('.multiselect');
+
+	multiselects.forEach(ms => {
+		const toggle = ms.querySelector('.multiselect-toggle');
+		const popup = ms.querySelector('.multiselect-popup');
+
+		toggle.addEventListener('click', e => {
+			e.stopPropagation();
+			ms.classList.toggle('open');
+		});
+
+		popup.addEventListener('change', () => {
+			const checked = [...popup.querySelectorAll('input:checked')].map(i => i.value);
+			toggle.textContent = checked.length ? checked.join(', ') : 'Vælg område';
+		});
+	});
+
+	document.addEventListener('click', e => {
+		document.querySelectorAll('.multiselect.open').forEach(ms => {
+			if (!ms.contains(e.target)) {
+				ms.classList.remove('open');
+			}
+		});
+	});
 });
