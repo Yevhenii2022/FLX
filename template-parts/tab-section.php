@@ -55,7 +55,14 @@ $tabs_subtitle = get_field('tabs_subtitle') ?? '';
             <?php
             $first = get_field('tabs')[0]['video'] ?? '';
             if ($first): ?>
-              <video src="<?php echo esc_url($first); ?>" controls></video>
+              <video loop id="custom-video" preload="auto" muted playsinline preload="metadata" controls>
+                <source src="<?php echo $first; ?>#t=0.001" type="video/mp4">
+                <source src="<?php echo $first; ?>#t=0.001" type="video/webm">
+                <source src="<?php echo $first; ?>#t=0.001" type="video/ogg">
+                <source src="<?php echo $first; ?>#t=0.001" type="video/quicktime">
+                <source src="<?php echo $first; ?>#t=0.001" type="video/x-flv">
+                <source src="<?php echo $first; ?>#t=0.001" type="video/x-msvideo">
+              </video>
             <?php endif; ?>
           </div>
         </div>
