@@ -55,7 +55,7 @@ $tabs_subtitle = get_field('tabs_subtitle') ?? '';
             <?php
             $first = get_field('tabs')[0]['video'] ?? '';
             if ($first): ?>
-              <video loop id="custom-video" preload="auto" muted playsinline preload="metadata" controls>
+              <video loop id="custom-video" preload="auto" muted playsinline preload="metadata">
                 <source src="<?php echo $first; ?>#t=0.001" type="video/mp4">
                 <source src="<?php echo $first; ?>#t=0.001" type="video/webm">
                 <source src="<?php echo $first; ?>#t=0.001" type="video/ogg">
@@ -63,6 +63,12 @@ $tabs_subtitle = get_field('tabs_subtitle') ?? '';
                 <source src="<?php echo $first; ?>#t=0.001" type="video/x-flv">
                 <source src="<?php echo $first; ?>#t=0.001" type="video/x-msvideo">
               </video>
+              <div class="video__play">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                  <circle cx="25" cy="25" r="22" fill="#fff" opacity=".5" />
+                  <path fill="#fff" d="m22 18 10 7-10 7z" />
+                </svg>
+              </div>
             <?php endif; ?>
           </div>
         </div>

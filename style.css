@@ -367,6 +367,7 @@ input:focus {
   transform: translateY(0);
 }
 .steps-block__video {
+  position: relative;
   flex: 1.5;
 }
 .steps-block__video video {
@@ -376,6 +377,14 @@ input:focus {
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: opacity 0.4s ease;
+}
+
+.video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 html {

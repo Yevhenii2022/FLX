@@ -128,4 +128,25 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		});
 	}
+
+	const playPauseButton = document.querySelector('.video__play');
+
+	const togglePlayPause = () => {
+		if (video.paused) {
+			video.play();
+			playPauseButton.innerHTML = '';
+		} else {
+			video.pause();
+			playPauseButton.innerHTML =
+				'<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><circle cx="25" cy="25" r="22" fill="#fff" opacity=".5"/><path fill="#fff" d="m22 18 10 7-10 7z"/></svg>';
+		}
+	};
+
+	if (video) {
+		video.addEventListener('click', togglePlayPause);
+	}
+
+	if (playPauseButton) {
+		playPauseButton.addEventListener('click', togglePlayPause);
+	}
 });
