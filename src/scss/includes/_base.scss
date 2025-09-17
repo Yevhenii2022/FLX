@@ -6,7 +6,7 @@ body {
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.2;
+	line-height: 25px;
 
 	&::-webkit-scrollbar {
 		width: 8px;
@@ -68,7 +68,22 @@ li {
 	will-change: font-weight;
 	&:hover,
 	&:focus {
-		transform: translateY(6px);
+		transform: translateY(6px) !important;
+	}
+
+	&--red {
+		margin-top: 24px;
+		color: $white;
+		background-color: $red;
+		border: none;
+	}
+}
+
+input {
+	border: none;
+	box-sizing: border-box;
+	&:focus {
+		outline: none;
 	}
 }
 

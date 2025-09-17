@@ -2,10 +2,14 @@
 	padding: 160px 0 20px 0;
 	background-color: $bg;
 	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 85px;
 		h1 {
 			font-size: 42px;
+			line-height: 46px;
 			span {
-				margin-left: 360px;
+				margin-left: 30px;
 			}
 		}
 		p {
@@ -19,37 +23,39 @@
 }
 
 .form {
+	padding: 50px 25px;
+	background-color: $white;
+	border-radius: 20px;
 	&__wrapper {
+		h2 {
+			margin-bottom: 34px;
+			font-size: 26px;
+			line-height: 34px;
+			span {
+				color: $red-4;
+			}
+		}
 	}
 
 	&__input {
-		margin-bottom: 2.2rem;
-		font-size: 0.786rem;
+		margin-bottom: 12px;
 		transition: $transition;
 
 		input {
-			border-bottom: 0.071rem solid rgba(24, 24, 24, 0.1);
-			font-size: 0.786rem;
-			background-color: $white;
-			padding-bottom: 1.143rem;
+			border: 1px solid $bg;
+			font-size: 12px;
+			padding: 12px;
 			width: 100%;
-			line-height: 109%;
 			transition: $transition;
-			border-radius: 0 !important;
+			border-radius: 8px;
 
 			&::placeholder {
-				text-transform: uppercase;
-				line-height: 109%;
-				color: rgba(24, 24, 24, 0.4);
-				@include media(mobile) {
-					font-size: 1rem;
-					line-height: 100%;
-				}
+				color: #bbbbbb;
 			}
 			&:hover,
 			&:focus,
 			&:active {
-				border-bottom: 0.071rem solid $black;
+				border: 1px solid $black;
 			}
 		}
 	}
