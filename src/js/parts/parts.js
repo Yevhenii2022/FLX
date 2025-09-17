@@ -105,4 +105,27 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 	});
+
+	//video
+	const tabs = document.querySelectorAll('.step-tab');
+	const video = document.querySelector('.steps-block__video video');
+
+	if (tabs.length && video) {
+		tabs.forEach(tab => {
+			tab.addEventListener('click', () => {
+				tabs.forEach(t => t.classList.remove('active'));
+				tab.classList.add('active');
+
+				const newVideo = tab.dataset.video;
+				if (newVideo) {
+					video.style.opacity = 0;
+					setTimeout(() => {
+						video.src = newVideo;
+						video.play();
+						video.style.opacity = 1;
+					}, 300);
+				}
+			});
+		});
+	}
 });

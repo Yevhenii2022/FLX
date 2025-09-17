@@ -28,12 +28,38 @@ $tabs_subtitle = get_field('tabs_subtitle') ?? '';
         <h3 class="anim-title _anim-items"><?= $tabs_subtitle ?></h3>
       <?php endif; ?>
 
+      <?php if (have_rows('tabs')): ?>
+        <div class="steps-block">
+          <div class="steps-block__tabs">
+            <?php
+            $index = 1;
+            while (have_rows('tabs')): the_row();
+              $title = get_sub_field('title');
+              $subtitle = get_sub_field('subtitle');
+              $video = get_sub_field('video');
+            ?>
+              <div class="step-tab <?php echo $index === 1 ? 'active' : ''; ?>" data-video="<?php echo esc_url($video); ?>">
+                <span class="step-number"><?php echo $index; ?>.</span>
+                <h3 class="step-title"><?php echo esc_html($title); ?></h3>
+                <?php if ($subtitle): ?>
+                  <p class="step-subtitle"><?php echo esc_html($subtitle); ?></p>
+                <?php endif; ?>
+              </div>
+            <?php
+              $index++;
+            endwhile;
+            ?>
+          </div>
 
-
-
-
-
-
+          <div class="steps-block__video">
+            <?php
+            $first = get_field('tabs')[0]['video'] ?? '';
+            if ($first): ?>
+              <video src="<?php echo esc_url($first); ?>" controls></video>
+            <?php endif; ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
     </div>
   </div>
