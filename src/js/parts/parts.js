@@ -189,3 +189,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.body.classList.toggle('burger-open');
 	});
 });
+
+document.addEventListener('click', function (event) {
+	const headerSearch = document.querySelector('.header__search');
+	const isClickInside = headerSearch.contains(event.target);
+
+	if (isClickInside) {
+		headerSearch.classList.add('active');
+	} else {
+		headerSearch.classList.remove('active');
+	}
+});
