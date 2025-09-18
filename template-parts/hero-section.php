@@ -16,8 +16,8 @@ $subtitle = get_field('subtitle') ?? '';
                 <?php endif; ?>
 
                 <div class="hero__box">
-                    <button type='button' class="button anim-card _anim-items">Find revisor</button>
-                    <button type='button' class="button anim-card _anim-items">Find bogholder</button>
+                    <div class="anim-card _anim-items"><button type='button' class="button">Find revisor</button></div>
+                    <div class="anim-card _anim-items"><button type='button' class="button">Find bogholder</button></div>
                 </div>
             </div>
 

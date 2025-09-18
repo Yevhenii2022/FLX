@@ -53,6 +53,15 @@ li {
 	list-style: none;
 }
 
+button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+a {
+	text-decoration: none;
+}
+
 .button {
 	display: flex;
 	justify-content: center;
@@ -60,7 +69,6 @@ li {
 	padding: 12px 8px;
 	width: 100%;
 	color: $black-3;
-	cursor: pointer;
 	border: 1px solid #959497;
 	font-family: inherit;
 	font-size: 12px;
