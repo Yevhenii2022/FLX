@@ -7,7 +7,7 @@ $subtitle = get_field('subtitle') ?? '';
     <div class="container">
         <div class="hero__wrapper">
 
-            <div>
+            <div class="hero__wrapper--center">
                 <?php if ($title) : ?>
                     <?= $title ?>
                 <?php endif; ?>
