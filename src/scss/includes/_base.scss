@@ -63,12 +63,6 @@ button {
 	background: transparent;
 	border: none;
 	cursor: pointer;
-	&.button--mob {
-		display: none;
-		@media screen and (min-width: $desktop) {
-			display: block;
-		}
-	}
 }
 a {
 	text-decoration: none;
@@ -99,6 +93,20 @@ a {
 		color: $white;
 		background-color: $red;
 		border: none;
+	}
+
+	&--mob {
+		position: fixed;
+		z-index: 1;
+		bottom: 0;
+		right: 0;
+		color: $white;
+		background: $red-2;
+		border-radius: initial;
+		border: none;
+		@media screen and (min-width: $desktop) {
+			display: none;
+		}
 	}
 }
 

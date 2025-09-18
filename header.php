@@ -60,42 +60,28 @@
 									<?= $phone ?>
 								</a>
 							<?php endif; ?>
-
-							<button type='button' class="button button--mob">Fa op til 3 tilbud</button>
-
-
-
+							<button type='button' class="button">Fa op til 3 tilbud</button>
 							<div class="header__search">
 								<input id="search__input" type="search" class="header__input">
 								<svg viewBox="0 0 19 19" fill="#959596">
 									<path fill-rule="evenodd" d="M15 14.292a8 8 0 1 0-.707.707l2.353 2.355.708-.708-2.355-2.354ZM9 16A7 7 0 1 1 9 2a7 7 0 0 1 0 14Z" clip-rule="evenodd"></path>
 								</svg>
 							</div>
-
-
-
-
-
-
 						</div>
 					</div>
-
-
 					<?php if ($phone) : ?>
 						<a href="tel:+<?= $cleanedNumber ?>" class="header__phone--mob">
 							<?= $phone ?>
 						</a>
 					<?php endif; ?>
-
 					<div class="header__mobile-menu">
-
 						<div class="header__burger">
 							<span class="header__burger-top"></span>
 							<span class="header__burger-middle"></span>
 							<span class="header__burger-bottom"></span>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</header>
+		<button type='button' class="button button--mob">Fa op til 3 tilbud</button>
