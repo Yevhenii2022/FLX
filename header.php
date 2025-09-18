@@ -40,9 +40,10 @@
 								<?php
 								wp_nav_menu(
 									array(
-										'container' => 'ul',
+										'container'   => 'ul',
 										'theme_location' => 'header_menu',
-										'menu_class' => 'nav__list',
+										'menu_class'  => 'nav__list',
+										'items_wrap'  => '<ul id="%1$s" class="%2$s"><li>Hjem</li>%3$s</ul>',
 									)
 								);
 								?>

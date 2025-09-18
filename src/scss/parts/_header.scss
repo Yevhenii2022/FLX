@@ -22,23 +22,25 @@
 		background-color: $white;
 		border-radius: 32px;
 		box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+		@media screen and (min-width: $desktop) {
+			padding: 12px 0;
+		}
 	}
 
 	&__logo {
 		margin-left: 12px;
 		height: 22px;
-
 		img {
 			object-fit: contain;
 			width: 150px;
 			height: 22px;
 		}
+		@media screen and (min-width: $desktop) {
+			margin-left: 30px;
+		}
 	}
 
 	&__content {
-		// display: flex;
-		// width: 100%;
-		// justify-content: space-between;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -49,26 +51,34 @@
 		right: -100%;
 		z-index: 1;
 		overflow: auto;
-		// padding: 6.857rem 1.143rem 2.286rem 1.143rem;
+		background-color: $white;
 		transition: all 0.7s ease;
 		flex-direction: column;
 		width: 100%;
-		background-color: $bg;
 
 		.button {
 			display: none;
 		}
 
 		@media screen and (min-width: $desktop) {
-			// z-index: 0;
 			position: initial;
-
 			flex-direction: row;
 			width: 100%;
 			justify-content: space-between;
 			overflow: visible;
+			background-color: transparent;
+			gap: 60px;
 			.button {
+				min-width: 180px;
+				max-width: 180px;
 				display: block;
+				background-color: $bg;
+				border: none;
+				transition: $transition;
+				&:hover {
+					color: $white;
+					background-color: $red-2;
+				}
 			}
 		}
 
@@ -79,7 +89,7 @@
 			// z-index: 1;
 			top: 0;
 			right: 0;
-			background-color: $bg;
+			// background-color: $bg;
 			// padding-top: 6.857rem;
 			// padding: 6.857rem 1.143rem 2.286rem 1.143rem;
 			bottom: 0;
@@ -94,28 +104,22 @@
 		display: flex;
 		align-items: center;
 		gap: 3.875rem;
-
-		// @include media(mobile) {
-		// 	flex-direction: column;
-		// 	align-items: flex-start;
-		// }
-	}
-
-	&__right {
-		display: flex;
-		justify-content: space-between;
-		gap: 0;
-
 		@media screen and (min-width: $desktop) {
-			align-items: center;
-			gap: 30px;
+			width: 100%;
+			justify-content: center;
 		}
 	}
 
-	&__contacts {
+	&__right {
+		width: 100%;
 		display: flex;
-		align-items: center;
-		gap: 1.143rem;
+		justify-content: flex-end;
+		gap: 20px;
+
+		@media screen and (min-width: $desktop) {
+			width: fit-content;
+			align-items: center;
+		}
 	}
 
 	&__phone {
@@ -138,34 +142,41 @@
 	}
 
 	&__search {
+		padding: 0 20px;
+		width: 100%;
 		display: flex;
 		cursor: pointer;
 
 		.header__input {
-			opacity: 0;
-			width: 0;
+			width: 100%;
 			background-color: transparent;
 			border-bottom: 1px solid $black-3;
 			transition: $transition;
 		}
 		svg {
-			width: 42px;
-			height: 42px;
+			width: 26px;
+			height: 26px;
 		}
-		&.active .header__input {
-			opacity: 1;
-			width: 150px;
-		}
+
 		@media screen and (min-width: $desktop) {
-			// font-size: 15px;
+			padding: 0 30px 0 0;
+			width: auto;
+			.header__input {
+				opacity: 0;
+				width: 0;
+			}
+			&.active .header__input {
+				opacity: 1;
+				width: 100px;
+			}
 		}
 	}
 
 	&__mobile-menu {
-		display: flex;
-		align-items: center;
-		gap: 0.6rem;
-		display: flex;
+		// display: flex;
+		// align-items: center;
+		// gap: 0.6rem;
+		// display: flex;
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
 		-webkit-touch-callout: none;
@@ -199,13 +210,13 @@
 					position: absolute;
 					transform: rotate(45deg);
 					width: 100%;
-					max-width: 1rem;
+					max-width: 16px;
 				}
 				&-bottom {
 					position: absolute;
 					transform: rotate(-45deg);
 					width: 100%;
-					max-width: 1rem;
+					max-width: 16px;
 				}
 			}
 		}
@@ -217,7 +228,7 @@
 	}
 
 	&__burger {
-		// @include media(mobile) {
+		margin-right: 14px;
 		display: flex;
 		position: relative;
 		z-index: 50;
@@ -229,25 +240,20 @@
 		gap: 4px;
 
 		span {
-			height: 0.05rem;
+			height: 2px;
 			transform: scale(1);
 			background-color: $black;
-			border-radius: 1.429rem;
 			transition: $transition;
 		}
 
-		&-top {
+		&-top,
+		&-middle {
 			width: 100%;
 		}
 
-		&-middle {
-			width: 66%;
-		}
-
 		&-bottom {
-			width: 33%;
+			width: 70%;
 		}
-		// }
 
 		// &::before,
 		// &::after {
@@ -281,18 +287,28 @@
 
 //wp menu
 .nav {
-	// @include media(mobile) {
-	// 	width: 100%;
-	// }
 	&__list {
+		margin-bottom: 40px;
 		display: flex;
-		gap: 1.8rem;
+		gap: 4px;
 		flex-direction: column;
 		z-index: -1;
 
-		@media (min-width: $desktop) {
+		li {
+			text-align: center;
+			&:first-child {
+				font-size: 31px;
+				color: $red-2;
+			}
+		}
+
+		@media screen and (min-width: $desktop) {
+			margin-bottom: 0;
 			flex-direction: row;
-			gap: 1.8rem;
+			gap: 30px;
+			li:first-child {
+				display: none;
+			}
 		}
 
 		a {
@@ -302,6 +318,7 @@
 			position: relative;
 			width: fit-content;
 			color: $black;
+
 			&:after {
 				content: '';
 				display: block;
