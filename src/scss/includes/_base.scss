@@ -86,13 +86,9 @@ a {
 	&:focus {
 		transform: translateY(6px) !important;
 	}
-	@media screen and (min-width: $desktop) {
-		min-width: 180px;
-		max-width: 180px;
-	}
 
 	&--red {
-		margin-top: 24px;
+		margin: 24px 0 0 0;
 		color: $white;
 		background-color: $red;
 		border: none;
@@ -107,8 +103,16 @@ a {
 		background: $red-2;
 		border-radius: initial;
 		border: none;
-		@media screen and (min-width: $desktop) {
+	}
+
+	@media screen and (min-width: $desktop) {
+		min-width: 180px;
+		max-width: 180px;
+		&--mob {
 			display: none;
+		}
+		&--red {
+			margin: 24px 0 0 auto;
 		}
 	}
 }
