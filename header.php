@@ -51,7 +51,6 @@
 						</div>
 
 						<div class="header__right">
-
 							<?php
 							$phone = get_field('phone', 'options');
 							$cleanedNumber = preg_replace('/\D/', '', $phone);
@@ -69,6 +68,21 @@
 								</svg>
 							</div>
 						</div>
+
+						<div class="header__socials">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+								<path fill="#d9d9d9" d="M16.5 7h-2.3c-.4 0-.7.4-.7.9V10h2.9l-.4 3.4h-2.5V21H10v-7.6H8.5V10H10V9c0-2.2 1.2-3.9 4-3.9 1.1 0 2 .1 2.5.1V7z" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+								<path fill="#d9d9d9" d="M7.6 20h-3V9.5h3V20zM6.1 7.3c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 20h-3v-5.3c0-1.4-.1-3.2-2.2-3.2-2.2 0-2.5 1.7-2.5 3.1V20h-3V9.5h2.8v1.4h.1c.5-.9 1.7-1.8 3.5-1.8 3.5 0 4.3 2.2 4.3 5.1V20z" />
+							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+								<rect width="19" height="19" x="2.5" y="2.5" stroke="#d9d9d9" stroke-width="2" rx="5" ry="5" />
+								<circle cx="12" cy="12" r="5" stroke="#d9d9d9" stroke-width="2" />
+								<circle cx="17.5" cy="6.5" r="1.5" fill="#d9d9d9" />
+							</svg>
+						</div>
+
 					</div>
 					<?php if ($phone) : ?>
 						<a href="tel:+<?= $cleanedNumber ?>" class="header__phone--mob">
