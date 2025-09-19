@@ -142,6 +142,8 @@
 	@media screen and (min-width: $desktop) {
 		flex-direction: row;
 		gap: 120px;
+	}
+	@media screen and (min-width: 1240px) {
 		&__video::after {
 			content: '';
 			width: 220px;

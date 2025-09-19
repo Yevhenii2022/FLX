@@ -91,6 +91,12 @@
 	}
 	@media screen and (min-width: $desktop) {
 		min-width: 400px;
+		&__wrapper {
+			.row {
+				display: flex;
+				gap: 12px;
+			}
+		}
 	}
 	@media screen and (min-width: 1200px) {
 		min-width: 550px;
